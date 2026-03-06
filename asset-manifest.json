@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-user-manager/static/css/main.1ebfb88a.css",
+    "main.js": "/react-user-manager/static/js/main.8ff8d45e.js",
+    "index.html": "/react-user-manager/index.html",
+    "main.1ebfb88a.css.map": "/react-user-manager/static/css/main.1ebfb88a.css.map",
+    "main.8ff8d45e.js.map": "/react-user-manager/static/js/main.8ff8d45e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1ebfb88a.css",
+    "static/js/main.8ff8d45e.js"
+  ]
+}
