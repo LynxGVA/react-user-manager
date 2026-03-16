@@ -3,27 +3,27 @@ import Header from "./components/Header"
 import Users from "./components/Users"
 import AddUser from "./components/AddUser"
 import axios from "axios"
- 
-const baseUrl = "https://randomuser.me/api/?results=5"
+
+const baseUrl = "https://jsonplaceholder.typicode.com/users"
 
 const App = () => {
 
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-     axios.get(baseUrl).then((res) => {
-      
-      const formattedUsers = res.data.results.map((user, index) => ({
-        id: index + 1,
-        firstname: user.name.first,
-        lastname: user.name.last,
-        bio: "User from API",
-        age: user.dob.age,
-        isHappy: Math.random() > 0.5
-      }))
-      setUsers(formattedUsers)
-    })
-  }, [])
+  axios.get(baseUrl).then((res) => {
+    const formattedUsers = res.data.map((user, index) => ({
+      id: index + 1,
+      firstname: user.name.split(" ")[0],
+      lastname: user.name.split(" ")[1] || "",
+      bio: user.company.catchPhrase,
+      age: 20 + index,
+      isHappy: Math.random() > 0.5
+    }))
+
+    setUsers(formattedUsers)
+  })
+}, [])
 
 const addUser = (user) => {
   const id = users.length + 1
